@@ -1,0 +1,225 @@
+{
+	"info": {
+		"_postman_id": "21640738-44da-4a99-9423-1d6612d30d6e",
+		"name": "Ecommerce API Microservices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19638931"
+	},
+	"item": [
+		{
+			"name": "API Product",
+			"item": [
+				{
+					"name": "GetAllProducts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8083",
+							"host": [
+								"localhost"
+							],
+							"port": "8083"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProductById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8083/product/1552",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"product",
+								"1552"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddProduct",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Bolpoin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8083",
+							"host": [
+								"localhost"
+							],
+							"port": "8083"
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "API Inventory",
+			"item": [
+				{
+					"name": "GetAllnventories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8084",
+							"host": [
+								"localhost"
+							],
+							"port": "8084"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetInventoryByProductId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8084/1550",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"1550"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateInventoryById",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8084/1552?quantity=25",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"1552"
+							],
+							"query": [
+								{
+									"key": "quantity",
+									"value": "25"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddInventory",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product_id\" : \"1550\",\r\n    \"price\" : \"2500\",\r\n    \"quantity\" : \"75\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8084",
+							"host": [
+								"localhost"
+							],
+							"port": "8084"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateInventoryByOrder",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8084/order?product_id=1550&quantity=12",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"order"
+							],
+							"query": [
+								{
+									"key": "product_id",
+									"value": "1550"
+								},
+								{
+									"key": "quantity",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "API Order",
+			"item": [
+				{
+					"name": "AddOrder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product_id\" : 1550,\r\n    \"quantity\" : 20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8085",
+							"host": [
+								"localhost"
+							],
+							"port": "8085"
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
